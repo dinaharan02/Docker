@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <link rel="shortcut icon" href="/static/images/download.png" type="image/png">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <style>
+    </style>
+</head>
+<body style="background-color:grey">
+<div class="container">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        {% if message.tags == 'error' %}
+        <li class="alert alert-danger" style="list-style-type:none;">
+            {{ message }}
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div>
+        <h1 style="color:white">Sign Up</h1>
+    </div>
+    <form action="" class="form-control sign-up-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label class="form-label firstname"> Firstname</label> {{ forms.firstname }} <br/>
+        <label class="form-label lastname"> LastName</label> {{ forms.lastname }} <br/>
+        <label class="form-label username"> UserName</label> {{ forms.username }} <br/>
+        <label class="form-label password"> Password</label> {{ forms.password }} <br/>
+        <label class="form-label mobile_no"> Mobile</label> {{ forms.mobile_number }} <br/>
+        <button type="submit" class="btn btn-primary">Sign Up</button><br>
+        <p>Already have an account?<a class="link-underline-primary" href="login.html"> Login here</a></p>
+    </form>
+</div>
+</body>
+<script src="/static/js/bootstrap.min.js">
+</script>
+<script src="/static/js/bootstrap.bundle.min.js">
+</script>
+</html>
