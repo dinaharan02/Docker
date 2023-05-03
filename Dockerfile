@@ -5,7 +5,7 @@ COPY ./formApp ./
 
 RUN pip uninstall django
 
-RUN pip install -r /app/requirements.txt 
+RUN pip install -r /app/requirements.txt    
 
 # RUN python manage.py collectstatic --no-input
 
